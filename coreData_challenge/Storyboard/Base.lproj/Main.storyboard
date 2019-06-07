@@ -126,23 +126,53 @@
                     <view key="view" contentMode="scaleToFill" id="vDo-7N-9GI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oai-2b-D2Z">
+                                <rect key="frame" x="50" y="433" width="314" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TSm-yh-aZp">
+                                <rect key="frame" x="270" y="500" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stepper>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="step" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZm-rR-fLt">
+                                <rect key="frame" x="50" y="500" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es8-mO-PiL">
+                                <rect key="frame" x="324" y="578" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="color"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OZ7-mP-dSu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create counter" id="6xz-0H-LK4">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="i5f-Ap-HQK">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="qoh-rT-WaF" userLabel="Done">
                             <connections>
-                                <action selector="cancelAction:" destination="sVi-q5-t5j" id="Spg-g0-iLh"/>
+                                <action selector="doneAction:" destination="sVi-q5-t5j" id="HCi-dr-IpG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="CancelButton" destination="i5f-Ap-HQK" id="TSa-uk-jsK"/>
+                        <outlet property="cancelButton" destination="i5f-Ap-HQK" id="TSa-uk-jsK"/>
+                        <outlet property="colorButton" destination="Es8-mO-PiL" id="0EL-Vj-AJy"/>
+                        <outlet property="doneButton" destination="qoh-rT-WaF" id="6dI-cD-ZM1"/>
+                        <outlet property="stepControl" destination="TSm-yh-aZp" id="WKy-t2-KjO"/>
+                        <outlet property="stepTextField" destination="aZm-rR-fLt" id="LV2-Xa-az0"/>
+                        <outlet property="titleTextField" destination="Oai-2b-D2Z" id="Jx7-gQ-qvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaz-JD-JCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3581.1594202898555" y="-20.089285714285712"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="-558.48214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hJD-dP-eyc">
@@ -177,6 +207,11 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afV-0d-Oxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Cancel" id="i5f-Ap-HQK">
+                    <connections>
+                        <action selector="cancelAction:" destination="sVi-q5-t5j" id="Spg-g0-iLh"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="2671.0144927536235" y="-20.089285714285712"/>
         </scene>

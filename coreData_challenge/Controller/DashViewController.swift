@@ -30,10 +30,6 @@ class DashViewController: UIViewController {
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
     
     
     @IBAction func reloadAction(_ sender: UIBarButtonItem) {
