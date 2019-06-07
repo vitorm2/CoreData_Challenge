@@ -20,6 +20,7 @@ class DashViewController: UIViewController {
         //createCounter()
         retrieveData()
        
+        CounterCollectionView.delegate = self
         CounterCollectionView.dataSource = self
         //var counter = Counter()
         
@@ -34,8 +35,12 @@ class DashViewController: UIViewController {
         
     }
     
-    func config() {
+    
+    @IBAction func reloadAction(_ sender: UIBarButtonItem) {
+        CounterCollectionView.reloadData()
+        self.viewDidLayoutSubviews()
     }
+    
     
     func createCounter() {
         
@@ -47,10 +52,10 @@ class DashViewController: UIViewController {
         
         for i in 1...5 {
             let counter = NSManagedObject(entity: entity, insertInto: managedContext)
-            counter.setValue("Counter \(i)", forKey: "title")
+            counter.setValue("Número de vez que fui ao banheiro \(i)", forKey: "title")
             counter.setValue(0, forKey: "count")
-            counter.setValue("color test", forKey: "color")
-            counter.setValue("config test", forKey: "color")
+            counter.setValue("red", forKey: "color")
+            counter.setValue("config test", forKey: "config")
         }
         
         do {
@@ -72,7 +77,7 @@ class DashViewController: UIViewController {
             let result = try managedContext.fetch(fetchRequest)
             
             for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "title"))
+                //print(data.value(forKey: "title"))
                 let aux = data as! Counter
                 counters.append(aux)
             }
@@ -81,6 +86,7 @@ class DashViewController: UIViewController {
             fatalError()
         }
     }
+    
     
     func deleteData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -106,16 +112,6 @@ class DashViewController: UIViewController {
         }
         CounterCollectionView.reloadData()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -127,8 +123,34 @@ extension DashViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "counter", for: indexPath) as! CounterCollectionViewCell
         cell.titleLabel.text = counters[indexPath.row].title
+        cell.counterLabel.text = String(counters[indexPath.row].count)
+        cell.counter = counters[indexPath.row]
+        
+        cell.layer.cornerRadius = 10.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowRadius = 10
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        cell.layer.shadowOpacity = 0.25
+        
         return cell
     }
     
+    
+}
+
+extension DashViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width * 0.45, height: collectionView.frame.height * 0.3)
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+    }
     
 }

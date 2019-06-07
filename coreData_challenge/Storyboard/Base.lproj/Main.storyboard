@@ -19,34 +19,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yxC-55-wSf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
-                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xtd-a7-TKT">
                                     <size key="itemSize" width="186" height="175"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="counter" id="qlw-rv-3kB" customClass="CounterCollectionViewCell" customModule="coreData_challenge" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="186" height="175"/>
+                                        <rect key="frame" x="5" y="10" width="193" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="186" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="193" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvb-Qj-FPg">
-                                                    <rect key="frame" x="46" y="28" width="94" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4vT-Wi-V9w">
+                                                    <rect key="frame" x="51.5" y="123" width="90" height="42"/>
+                                                    <subviews>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzg-Io-Usw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="plusAction:" destination="qlw-rv-3kB" eventType="touchUpInside" id="C13-c2-eBb"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vp8-0r-Opg">
+                                                            <rect key="frame" x="60" y="0.0" width="30" height="42"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="-"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de vezes que fui ao banheiro" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvb-Qj-FPg">
+                                                    <rect key="frame" x="10" y="10" width="173" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0087351832790000007" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-0U-VK7">
+                                                    <rect key="frame" x="73.5" y="63.5" width="46" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                    <color key="textColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Tvb-Qj-FPg" firstAttribute="leading" secondItem="qlw-rv-3kB" secondAttribute="leading" constant="10" id="0Mv-oV-EIf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tvb-Qj-FPg" secondAttribute="trailing" constant="10" id="OMe-7N-Pix"/>
+                                            <constraint firstAttribute="bottom" secondItem="4vT-Wi-V9w" secondAttribute="bottom" constant="10" id="SX1-D9-7Ka"/>
+                                            <constraint firstItem="Tvb-Qj-FPg" firstAttribute="centerX" secondItem="qlw-rv-3kB" secondAttribute="centerX" id="WCf-Wu-Mpq"/>
+                                            <constraint firstItem="4vT-Wi-V9w" firstAttribute="centerX" secondItem="qlw-rv-3kB" secondAttribute="centerX" id="fJP-hp-mxq"/>
+                                            <constraint firstItem="gYW-0U-VK7" firstAttribute="centerX" secondItem="qlw-rv-3kB" secondAttribute="centerX" id="ogU-cx-Zak"/>
+                                            <constraint firstItem="Tvb-Qj-FPg" firstAttribute="top" secondItem="qlw-rv-3kB" secondAttribute="top" constant="10" id="rWL-cx-U9F"/>
+                                            <constraint firstItem="gYW-0U-VK7" firstAttribute="centerY" secondItem="qlw-rv-3kB" secondAttribute="centerY" id="vfD-hZ-Ueh"/>
+                                        </constraints>
+                                        <size key="customSize" width="193" height="175"/>
                                         <connections>
+                                            <outlet property="counterLabel" destination="gYW-0U-VK7" id="Gg1-Ku-Nyl"/>
+                                            <outlet property="minusButton" destination="Vp8-0r-Opg" id="UUv-5n-ix1"/>
+                                            <outlet property="plusButton" destination="Kzg-Io-Usw" id="X8j-Tn-ghh"/>
                                             <outlet property="titleLabel" destination="Tvb-Qj-FPg" id="JMa-de-oIy"/>
                                         </connections>
                                     </collectionViewCell>
@@ -55,15 +92,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yxC-55-wSf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9aj-dY-jTC"/>
-                            <constraint firstItem="yxC-55-wSf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CV7-sI-oec"/>
+                            <constraint firstItem="yxC-55-wSf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8dH-nL-aBh"/>
                             <constraint firstItem="yxC-55-wSf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QA8-kd-af7"/>
                             <constraint firstItem="yxC-55-wSf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qab-Ih-H9W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yxC-55-wSf" secondAttribute="bottom" id="roI-vO-Txq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Counters" largeTitleDisplayMode="never" id="xLt-45-dFc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WEf-9Y-f9v">
+                        <barButtonItem key="leftBarButtonItem" title="Reload" id="HXU-6e-Xds" userLabel="Reload">
+                            <connections>
+                                <action selector="reloadAction:" destination="BYZ-38-t0r" id="jcV-Je-DZ6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="WEf-9Y-f9v">
                             <connections>
                                 <segue destination="bxR-po-lr7" kind="presentation" id="bsC-xy-GOg"/>
                             </connections>
