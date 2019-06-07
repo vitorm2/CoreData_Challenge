@@ -32,7 +32,10 @@ class NewCounterViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+        
     }
+    
+
     
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
         createCounter()

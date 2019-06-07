@@ -100,9 +100,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Counters" largeTitleDisplayMode="never" id="xLt-45-dFc">
-                        <barButtonItem key="leftBarButtonItem" title="Reload" id="HXU-6e-Xds" userLabel="Reload">
+                        <barButtonItem key="leftBarButtonItem" title="Delete all" id="HXU-6e-Xds" userLabel="Reload">
                             <connections>
-                                <action selector="reloadAction:" destination="BYZ-38-t0r" id="jcV-Je-DZ6"/>
+                                <action selector="deleteAllAction:" destination="BYZ-38-t0r" id="sVF-DM-y0G"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="WEf-9Y-f9v">

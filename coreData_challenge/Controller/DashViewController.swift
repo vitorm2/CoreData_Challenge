@@ -17,27 +17,20 @@ class DashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //createCounter()
         retrieveData()
        
         CounterCollectionView.delegate = self
         CounterCollectionView.dataSource = self
-        //var counter = Counter()
-        
-        //deleteData()
-        // Do any additional setup after loading the view.
-        
 
     }
     
-    
-    
-    @IBAction func reloadAction(_ sender: UIBarButtonItem) {
-        CounterCollectionView.reloadData()
-        self.viewDidLayoutSubviews()
-        retrieveData()
+    @IBAction func deleteAllAction(_ sender: UIBarButtonItem) {
+        deleteData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        retrieveData()
+    }
     
     func createCounter() {
         
@@ -80,6 +73,9 @@ class DashViewController: UIViewController {
                 counters.append(aux)
             }
             
+            CounterCollectionView.reloadData()
+            self.viewDidLayoutSubviews()
+            
         } catch {
             fatalError()
         }
@@ -99,10 +95,7 @@ class DashViewController: UIViewController {
             for data in result as! [NSManagedObject] {
                 managedContext.delete(data)
             }
-            
-            print("after deletion")
             retrieveData()
-            print("done")
             
             try managedContext.save()
         } catch {
