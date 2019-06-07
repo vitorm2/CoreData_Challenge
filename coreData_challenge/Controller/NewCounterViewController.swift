@@ -15,30 +15,37 @@ class NewCounterViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var stepTextField: UITextField!
-    @IBOutlet weak var stepControl: UIStepper!
+    
     @IBOutlet weak var colorButton: UIButton!
+    
+    var colorString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneButton.isEnabled = false
+        
         titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
-        
-        stepTextField.keyboardType = .numberPad
-        
-        stepControl.value = 1
-        stepControl.isContinuous = false
-        stepControl.stepValue = 1
     }
+    
+    
+    
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
     
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
         createCounter()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func colorAction(_ sender: Any) {
+        let colorDetail = self.storyboard?.instantiateViewController(withIdentifier: "ColorDetailViewController") as! ColorDetailViewController
+        
+        colorDetail.parentController = self
+        
+        self.navigationController?.pushViewController(colorDetail, animated: true)
+        //self.present(colorDetail, animated: true, completion: {})
     }
     
     func createCounter() {
@@ -68,14 +75,6 @@ class NewCounterViewController: UIViewController {
             doneButton.isEnabled = false
         } else {
             doneButton.isEnabled = true
-        }
-    }
-    
-    @objc func stepTextFieldDidChange(_ textField: UITextField) {
-        if textField.text == "" {
-            stepControl.value = 1
-        } else {
-            stepControl.value = Double(Int(textField.text!)!)
         }
     }
     

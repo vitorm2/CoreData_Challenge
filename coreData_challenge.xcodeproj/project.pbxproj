@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A05970D22AAF88E00BB17EA /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05970C22AAF88E00BB17EA /* ColorTableViewCell.swift */; };
+		3A77596B22AAF5CD002DF711 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77596A22AAF5CD002DF711 /* ColorDetailViewController.swift */; };
 		3AA2436C22A9955E00FABACA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2436B22A9955E00FABACA /* AppDelegate.swift */; };
 		3AA2437122A9955E00FABACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2436F22A9955E00FABACA /* Main.storyboard */; };
 		3AA2437422A9955E00FABACA /* coreData_challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2437222A9955E00FABACA /* coreData_challenge.xcdatamodeld */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A05970C22AAF88E00BB17EA /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		3A77596A22AAF5CD002DF711 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
 		3AA2436822A9955E00FABACA /* coreData_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreData_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA2436B22A9955E00FABACA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA2437022A9955E00FABACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			children = (
 				3AA2438022A9959D00FABACA /* DashViewController.swift */,
 				3AA2438C22A9A76A00FABACA /* NewCounterViewController.swift */,
+				3A77596A22AAF5CD002DF711 /* ColorDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3AA2438A22A9A07D00FABACA /* CounterCollectionViewCell.swift */,
+				3A05970C22AAF88E00BB17EA /* ColorTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 				3AA2438922A99D8C00FABACA /* Counter.swift in Sources */,
 				3AA2437422A9955E00FABACA /* coreData_challenge.xcdatamodeld in Sources */,
 				3AA2438122A9959D00FABACA /* DashViewController.swift in Sources */,
+				3A05970D22AAF88E00BB17EA /* ColorTableViewCell.swift in Sources */,
 				3AA2436C22A9955E00FABACA /* AppDelegate.swift in Sources */,
+				3A77596B22AAF5CD002DF711 /* ColorDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
