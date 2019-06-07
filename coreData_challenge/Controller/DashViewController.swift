@@ -35,6 +35,7 @@ class DashViewController: UIViewController {
     @IBAction func reloadAction(_ sender: UIBarButtonItem) {
         CounterCollectionView.reloadData()
         self.viewDidLayoutSubviews()
+        retrieveData()
     }
     
     
@@ -72,6 +73,7 @@ class DashViewController: UIViewController {
         do {
             let result = try managedContext.fetch(fetchRequest)
             
+             counters = []
             for data in result as! [NSManagedObject] {
                 //print(data.value(forKey: "title"))
                 let aux = data as! Counter

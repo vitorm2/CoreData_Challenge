@@ -51,7 +51,7 @@ class NewCounterViewController: UIViewController {
         
         let newCounter = NSManagedObject(entity: entity, insertInto: managedContext)
         newCounter.setValue(titleTextField.text, forKey: "title")
-        newCounter.setValue(Int(stepControl.value), forKey: "count")
+        newCounter.setValue(0, forKey: "count")
         newCounter.setValue("color test", forKey: "color")
         newCounter.setValue("config test", forKey: "config")
         
